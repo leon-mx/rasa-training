@@ -1,0 +1,28 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: user_name
+    entities:
+    - name: Leonardo
+  - slot_was_set:
+    - name: Leonardo
+  - action: action_hello_world
+  - intent: user_phone
+    entities:
+    - phone: 5554778846
+  - slot_was_set:
+    - phone: 5554778846
+  - action: action_phone
+  - intent: affirm
+  - action: utter_age
+  - intent: user_age
+    entities:
+    - age: 21
+  - slot_was_set:
+    - age: 21
+  - action: action_submit

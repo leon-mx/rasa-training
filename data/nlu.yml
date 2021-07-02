@@ -1,1 +1,110 @@
+version: "2.0"
 
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes that is my number
+    - My phone number is correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: user_name
+  examples: |
+    - My name is [Leonardo]{"entity": "name"}
+    - [Leonardo]{"entity": "name"}
+    - [leo]{"entity": "name"}
+    - [Ashish]{"entity": "name"}
+    - I'm [Ashish]{"entity": "name"}
+    - Sure, my name is [Leo]{"entity": "name"}
+    - [Rodrigo]{"entity": "name"}
+
+- intent: user_phone
+  examples: |
+    - My phone number is [5554884405]{"entity": "phone"}
+    - My phone is [55564581]{"entity": "phone"}
+    - My number is [9989554675]{"entity": "phone"}
+    - [5554567756]{"entity": "phone"}
+
+- intent: user_age
+  examples: |
+    - Im [16]{"entity": "age"}
+    - [20]{"entity": "age"} yo
+    - I am [24]{"entity": "age"} years old
+    - I'm [30]{"entity": "age"} years
+    - I have [26]{"entity": "age"}
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: fill_form
+  examples: |
+    - I want to fill the form
+    - Where can I fill the form?
+    - How can i fill the form?
+    - Is the form available?
+    - I want to fill form
