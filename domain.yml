@@ -1,0 +1,95 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - user_name
+  - mood_unhappy
+  - bot_challenge
+  - fill_form
+
+entities:
+- name
+- phone
+- age
+
+slots:
+  name:
+    type: text
+  phone:
+    type: text
+  age:
+    type: text
+  email:
+    type: text
+
+responses:
+
+  utter_greet:
+  - text: "Welcome"
+
+  utter_ask_name:
+  - text: "Hey, please provide us your name"
+
+  utter_name:
+  - text: "Welcome {usuario_name}! please provide your phone number"
+
+  utter_ask_phone:
+  - text: "Please provide your phone number"
+
+  utter_ask_email:
+  - text: "Please provide your email"
+
+  utter_age:
+  - text: "Great. What is your age?"
+
+  utter_confirmation:
+  - text: "Thank you for the information"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_rephrase:
+  - text: "Sorry, I did not understand, can you rephrase?"
+
+actions:
+  - action_hello_world
+  - action_phone
+  - action_submit
+  - action_fallback
+  - action_submit_form
+
+# Forms slot mapping # 2 ways of getting the value to store it in the slot, from user input = from_text and from entity = from_entity and entity
+forms:
+# First add the form name, then the slots
+  user_details_form:
+    name:
+      - type: from_text
+    phone:
+      - type: from_entity
+        entity: phone
+    email:
+      - type: from_text
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+# utter_ask_"slot" prefix to fill an specific slot
+
+# Using from_text we should go one by one and will collect everything the user will type
+# Using the from_entity we can collect all the information at once 
+
+# Fallback = confidence level tr
